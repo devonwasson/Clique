@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5gs-54-BFu" kind="relationship" relationship="viewControllers" id="0R9-Lm-alS"/>
+                        <segue destination="L2o-fN-hw2" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="S9W-5I-ngT" kind="relationship" relationship="viewControllers" id="IuU-OD-Xwf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="1162"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="puj-he-b7s">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Messages" id="L2o-fN-hw2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ETH-fW-uN5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gV-Ld-Pfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480.5" y="1122"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="UD8-8Y-rNb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="S9W-5I-ngT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="2YE-jc-GrS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Tt-rJ-aE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="1221"/>
+        </scene>
+        <!--MainPage-->
+        <scene sceneID="PeQ-xU-2mv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainPage" id="5gs-54-BFu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="pdO-KO-Hm7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWs-C9-weS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="463.5" y="1407"/>
+        </scene>
+    </scenes>
+</document>

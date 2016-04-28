@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Xj-DX-Ttu">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--My Profile-->
+        <scene sceneID="W1D-XU-qyQ">
+            <objects>
+                <viewController title="My Profile" id="IEq-uc-jpI" customClass="MyProfileViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bzt-zu-PyO"/>
+                        <viewControllerLayoutGuide type="bottom" id="plh-mi-nLj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q6g-Bc-mVn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gender Neutral User Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="PAA-r9-DTx">
+                                <rect key="frame" x="210" y="28" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PAA-r9-DTx" secondAttribute="height" multiplier="1:1" id="yZ8-DL-aWQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb8-ta-OLX">
+                                <rect key="frame" x="236" y="216" width="129" height="30"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlU-or-ucj">
+                                <rect key="frame" x="275" y="254" width="51" height="15"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="My Bio" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-3R-AKj" userLabel="Bio Text">
+                                <rect key="frame" x="90" y="318" width="420" height="225"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvs-Lc-z3d">
+                                <rect key="frame" x="259" y="290" width="83" height="20"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tb8-ta-OLX" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="1ef-U0-Bxy"/>
+                            <constraint firstItem="plh-mi-nLj" firstAttribute="top" secondItem="rNT-3R-AKj" secondAttribute="bottom" constant="8" symbolic="YES" id="A1h-8H-Zg1"/>
+                            <constraint firstItem="tb8-ta-OLX" firstAttribute="top" secondItem="PAA-r9-DTx" secondAttribute="bottom" constant="8" symbolic="YES" id="AEF-DU-VRg"/>
+                            <constraint firstItem="rNT-3R-AKj" firstAttribute="width" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.7" id="Csa-Mt-PoU"/>
+                            <constraint firstItem="tb8-ta-OLX" firstAttribute="width" relation="lessThanOrEqual" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.8" id="DAw-P5-7rm"/>
+                            <constraint firstItem="PAA-r9-DTx" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="Dm5-EP-RLy"/>
+                            <constraint firstItem="Lvs-Lc-z3d" firstAttribute="width" relation="lessThanOrEqual" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.8" id="FmB-JH-jbG"/>
+                            <constraint firstItem="rNT-3R-AKj" firstAttribute="top" secondItem="Lvs-Lc-z3d" secondAttribute="bottom" constant="8" symbolic="YES" id="ObZ-QR-Wbm"/>
+                            <constraint firstItem="Lvs-Lc-z3d" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="eDi-yQ-8LY"/>
+                            <constraint firstItem="PAA-r9-DTx" firstAttribute="width" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.3" id="nED-rc-fkT"/>
+                            <constraint firstItem="RlU-or-ucj" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="nms-pD-Mbw"/>
+                            <constraint firstItem="RlU-or-ucj" firstAttribute="width" relation="lessThanOrEqual" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.8" id="qZV-eF-g5x"/>
+                            <constraint firstItem="RlU-or-ucj" firstAttribute="top" secondItem="tb8-ta-OLX" secondAttribute="bottom" constant="8" symbolic="YES" id="rGc-E8-XKY"/>
+                            <constraint firstItem="PAA-r9-DTx" firstAttribute="top" secondItem="bzt-zu-PyO" secondAttribute="bottom" constant="8" symbolic="YES" id="sAl-kF-P8F"/>
+                            <constraint firstItem="rNT-3R-AKj" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="v7z-kn-AAk"/>
+                            <constraint firstItem="Lvs-Lc-z3d" firstAttribute="centerY" secondItem="Q6g-Bc-mVn" secondAttribute="centerY" id="y5Y-ly-eFW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Gender Neutral User-50" selectedImage="Gender Neutral User Filled-50" id="AHm-U7-aHE"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="3dn-cs-Oer">
+                        <barButtonItem key="rightBarButtonItem" image="Settings-50" id="z0Q-jl-T3w"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="profileBio" destination="rNT-3R-AKj" id="ib5-5a-6GA"/>
+                        <outlet property="profileEmail" destination="Lvs-Lc-z3d" id="vqM-x2-iXo"/>
+                        <outlet property="profileGender" destination="RlU-or-ucj" id="Bj4-5o-ugO"/>
+                        <outlet property="profileImageView" destination="PAA-r9-DTx" id="mai-8V-mQ8"/>
+                        <outlet property="profileName" destination="tb8-ta-OLX" id="xpw-zp-ZOu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feF-QT-MCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="1055"/>
+        </scene>
+        <!--My Profile-->
+        <scene sceneID="yCc-XC-zhe">
+            <objects>
+                <tableViewController id="S5f-h6-TDi" customClass="MyProfileTableViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CRl-e4-EsV">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="myProfileTopCell" rowHeight="410" id="Yc8-BZ-iPF" userLabel="Header Cell" customClass="MyProfileTopCell" customModule="Clique" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="410"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yc8-BZ-iPF" id="dem-TH-UAB">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="409"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Devon" translatesAutoresizingMaskIntoConstraints="NO" id="RCH-jH-4To">
+                                            <rect key="frame" x="200" y="28" width="200" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="RCH-jH-4To" secondAttribute="height" multiplier="1:1" id="ECA-AQ-fsq"/>
+                                                <constraint firstAttribute="width" constant="200" id="MPJ-1O-sWj"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-5Z-qgn">
+                                            <rect key="frame" x="8" y="312" width="584" height="76"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="76" id="Om4-OJ-40K"/>
+                                                <constraint firstAttribute="width" constant="584" id="wQx-Z5-C0c"/>
+                                            </constraints>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike HammerHead Shark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OXC-Ac-z2l">
+                                            <rect key="frame" x="175" y="268" width="251" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OXC-Ac-z2l" firstAttribute="centerX" secondItem="dem-TH-UAB" secondAttribute="centerX" id="0BE-97-2Pu"/>
+                                        <constraint firstItem="OXC-Ac-z2l" firstAttribute="top" secondItem="RCH-jH-4To" secondAttribute="bottom" constant="40" id="Een-By-dVi"/>
+                                        <constraint firstItem="RCH-jH-4To" firstAttribute="centerX" secondItem="dem-TH-UAB" secondAttribute="centerX" id="Fhp-HH-fmJ"/>
+                                        <constraint firstItem="RCH-jH-4To" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dem-TH-UAB" secondAttribute="leadingMargin" id="JDc-FG-ReT"/>
+                                        <constraint firstItem="WBU-5Z-qgn" firstAttribute="top" secondItem="OXC-Ac-z2l" secondAttribute="bottom" constant="17" id="W8i-Bx-bhf"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="WBU-5Z-qgn" secondAttribute="trailing" id="ceB-pa-CTE"/>
+                                        <constraint firstItem="WBU-5Z-qgn" firstAttribute="leading" secondItem="OXC-Ac-z2l" secondAttribute="leading" id="oVx-fb-HX3"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="WBU-5Z-qgn" secondAttribute="leading" id="sOB-lB-web"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="RCH-jH-4To" secondAttribute="trailing" id="uya-3E-YFe"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="OXC-Ac-z2l" secondAttribute="leading" id="vuy-IM-WPR"/>
+                                        <constraint firstItem="RCH-jH-4To" firstAttribute="top" secondItem="dem-TH-UAB" secondAttribute="topMargin" constant="20" id="ysA-Cn-vv8"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="oVx-fb-HX3"/>
+                                            <exclude reference="vuy-IM-WPR"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="OXC-Ac-z2l" id="24g-FF-Det"/>
+                                    <outlet property="profilePic" destination="RCH-jH-4To" id="8oc-LJ-sHc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="S5f-h6-TDi" id="fBh-EC-oZW"/>
+                            <outlet property="delegate" destination="S5f-h6-TDi" id="3ik-il-tJf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Profile" id="lAY-gE-con"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TV8-4N-BI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328" y="1732"/>
+        </scene>
+        <!--My Profile-->
+        <scene sceneID="X2a-CU-6Hj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Xj-DX-Ttu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Profile" image="Gender Neutral User-50" selectedImage="Gender Neutral User Filled-50" id="Iv2-uR-ch2"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RHY-aS-A7K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S5f-h6-TDi" kind="relationship" relationship="rootViewController" id="AK4-hl-hOq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7gq-wT-BUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1516" y="1732"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Devon" width="458" height="456"/>
+        <image name="Gender Neutral User Filled-50" width="25" height="25"/>
+        <image name="Gender Neutral User-50" width="25" height="25"/>
+        <image name="Settings-50" width="25" height="25"/>
+    </resources>
+</document>

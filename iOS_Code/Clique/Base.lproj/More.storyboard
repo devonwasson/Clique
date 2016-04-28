@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="StX-V2-KAO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--More-->
+        <scene sceneID="6q8-0L-MaX">
+            <objects>
+                <viewController id="StX-V2-KAO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xxF-fv-Qhh"/>
+                        <viewControllerLayoutGuide type="bottom" id="6dg-jQ-BoZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8hV-4N-99y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIq-xZ-qT3">
+                                <rect key="frame" x="227" y="285" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aIq-xZ-qT3" firstAttribute="centerX" secondItem="8hV-4N-99y" secondAttribute="centerX" id="9Mr-go-iMc"/>
+                            <constraint firstItem="aIq-xZ-qT3" firstAttribute="centerY" secondItem="8hV-4N-99y" secondAttribute="centerY" id="k3c-99-Lbs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="More" image="More-50" selectedImage="More Filled-50" id="KmO-ch-EMU"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5YD-6g-4Sm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="1756"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="More Filled-50" width="25" height="25"/>
+        <image name="More-50" width="25" height="25"/>
+    </resources>
+</document>
