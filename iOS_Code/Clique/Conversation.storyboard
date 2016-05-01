@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Devon-->
+        <!--Lacey Gavala-->
         <scene sceneID="dN4-14-hYh">
             <objects>
                 <viewController id="Gli-Sn-OKo" customClass="ConversationContainerViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,14 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-F8-sS0">
-                                <rect key="frame" x="0.0" y="0.0" width="605" height="451"/>
-                                <connections>
-                                    <segue destination="UhA-eH-S7g" kind="embed" id="k1r-xB-e3q"/>
-                                </connections>
-                            </containerView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-BU-eXq">
-                                <rect key="frame" x="0.0" y="466" width="600" height="41"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-BU-eXq">
+                                <rect key="frame" x="0.0" y="510" width="600" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGx-xz-Edr">
                                         <rect key="frame" x="546" y="5" width="46" height="32"/>
@@ -34,6 +28,9 @@
                                             <constraint firstAttribute="width" constant="46" id="YJN-18-gT5"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="Gli-Sn-OKo" eventType="touchUpInside" id="S5j-Ok-2gu"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Say Hello!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZZ-LU-F03">
                                         <rect key="frame" x="8" y="5" width="538" height="30"/>
@@ -52,19 +49,26 @@
                                     <constraint firstItem="eZZ-LU-F03" firstAttribute="centerY" secondItem="mPD-BU-eXq" secondAttribute="centerY" id="oU4-sV-O9d"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-F8-sS0">
+                                <rect key="frame" x="0.0" y="44" width="605" height="451"/>
+                                <connections>
+                                    <segue destination="UhA-eH-S7g" kind="embed" identifier="conversationEmbedSegue" id="k1r-xB-e3q"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="omq-63-n6i" firstAttribute="top" secondItem="aRu-F8-sS0" secondAttribute="bottom" constant="56" id="BdH-kz-0PZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aRu-F8-sS0" secondAttribute="trailing" constant="-25" id="J4L-9B-kmY"/>
                             <constraint firstItem="mPD-BU-eXq" firstAttribute="leading" secondItem="aRu-F8-sS0" secondAttribute="leading" id="UAE-Gu-806"/>
+                            <constraint firstItem="eZZ-LU-F03" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aRu-F8-sS0" secondAttribute="bottom" constant="20" id="Z83-gB-Se0"/>
                             <constraint firstItem="aRu-F8-sS0" firstAttribute="top" secondItem="Lbd-xg-FLS" secondAttribute="bottom" id="lq3-4s-DN5"/>
                             <constraint firstItem="aRu-F8-sS0" firstAttribute="leading" secondItem="UYq-gH-kEW" secondAttribute="leadingMargin" constant="-20" id="mVL-LM-eaN"/>
                             <constraint firstAttribute="trailing" secondItem="mPD-BU-eXq" secondAttribute="trailing" id="piG-RQ-VFa"/>
                             <constraint firstItem="mPD-BU-eXq" firstAttribute="bottom" secondItem="omq-63-n6i" secondAttribute="top" id="sww-D6-XHL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Devon" id="eyT-65-GKd">
+                    <navigationItem key="navigationItem" title="Lacey Gavala" id="eyT-65-GKd">
                         <barButtonItem key="rightBarButtonItem" image="Gender Neutral User-50" id="47U-yW-rrA">
                             <connections>
                                 <segue destination="wUP-6r-RnC" kind="show" id="Uif-Sv-h3y"/>
@@ -78,6 +82,12 @@
                         <size key="portraitSize" width="600" height="551"/>
                         <size key="landscapeSize" width="551" height="600"/>
                     </fixedSimulatedSizeMetrics>
+                    <connections>
+                        <outlet property="bottomView" destination="mPD-BU-eXq" id="MuT-N3-tIz"/>
+                        <outlet property="container" destination="aRu-F8-sS0" id="YFT-9j-7Bi"/>
+                        <outlet property="inputTextfield" destination="eZZ-LU-F03" id="Mcn-aG-mb9"/>
+                        <outlet property="sendButton" destination="TGx-xz-Edr" id="rfG-xU-89e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFa-vL-upb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,17 +117,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="605" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aS-p6-4gn">
-                                            <rect key="frame" x="8" y="8" width="240" height="29"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="So... you wanna grab coffee?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aS-p6-4gn">
+                                            <rect key="frame" x="8" y="8" width="197" height="30"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="240" id="AEh-kp-HQJ"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="AEh-kp-HQJ"/>
                                             </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-
-Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -140,11 +145,11 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                     <rect key="frame" x="0.0" y="0.0" width="605" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hello My name is Chris" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84o-SF-GHs">
-                                            <rect key="frame" x="352" y="8" width="240" height="29"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Sure!  When do you wanna meet up?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84o-SF-GHs">
+                                            <rect key="frame" x="370" y="8" width="223" height="30"/>
                                             <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="240" id="IFJ-u0-gSD"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="IFJ-u0-gSD"/>
                                             </constraints>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -154,7 +159,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                     <constraints>
                                         <constraint firstItem="84o-SF-GHs" firstAttribute="top" secondItem="qmO-2k-QU8" secondAttribute="topMargin" id="6hc-24-GAY"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="84o-SF-GHs" secondAttribute="bottom" constant="4" id="HiL-Ai-vYV"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="84o-SF-GHs" secondAttribute="trailing" id="hlL-sH-oiJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="84o-SF-GHs" secondAttribute="trailing" constant="4" id="hlL-sH-oiJ"/>
                                         <constraint firstItem="84o-SF-GHs" firstAttribute="leading" secondItem="qmO-2k-QU8" secondAttribute="leadingMargin" id="iAg-B1-Omu"/>
                                     </constraints>
                                     <variation key="default">

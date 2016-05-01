@@ -9,13 +9,12 @@
 import UIKit
 
 class MessagesTableViewController: UITableViewController {
-
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +36,7 @@ class MessagesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 1
     }
 
     
@@ -50,6 +49,8 @@ class MessagesTableViewController: UITableViewController {
 
         return cell
     }
+    
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,11 +92,12 @@ class MessagesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-//        var nextScene = segue.destinationViewController
-//        
-//        nextScene.hidesBottomBarWhenPushed = true
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let nextScene = segue.destinationViewController as! ConversationContainerViewController
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! MessageTableViewCell
+            nextScene.connection = cell.connection
+        }
     }
 
 }

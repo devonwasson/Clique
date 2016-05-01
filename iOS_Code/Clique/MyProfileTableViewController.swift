@@ -51,6 +51,7 @@ class MyProfileTableViewController: UITableViewController {
         
         if indexPath.row == 0{
             let topCell = tableView.dequeueReusableCellWithIdentifier("myProfileTopCell", forIndexPath: indexPath) as! MyProfileTopCell
+            topCell.updateCell()
             //            topCell.nameLabel.text = connection.getRealUserName()
             cell = topCell
         }
@@ -63,16 +64,31 @@ class MyProfileTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0{
-            return 410.0
-        }
-//        else if indexPath.row == 9 {
-//            return 75.0
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        if indexPath.row == 0{
+//            return 410.0
 //        }
-        else {
-            return 50.0
-        }
+////        else if indexPath.row == 9 {
+////            return 75.0
+////        }
+//        else {
+//            return 50.0
+//        }
+//    }
+    
+    /*
+     Sets the automatic height of the cells
+     */
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
+    /*
+     Sets the estimated automatic height of the cells
+     */
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     

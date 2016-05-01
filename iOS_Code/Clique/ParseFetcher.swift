@@ -80,6 +80,8 @@ class ParseFetcher {
                         let bio = userTimePair.objectForKey("bio") as! String
                         let email = userTimePair.objectForKey("email") as! String
                         let gender = userTimePair.objectForKey("gender") as! String
+                        //print((userTimePair.objectForKey("profilePic") as! PFFile?)?.url
+                        let profilePic = userTimePair.objectForKey("profilePic") as! PFFile?
                         
                         connection.userId = userId
                         connection.userName = userName
@@ -87,6 +89,7 @@ class ParseFetcher {
                         connection.bio = bio
                         connection.email = email
                         connection.gender = gender
+                        connection.profilePicture = profilePic
                         
                         
                         // get timepairs information

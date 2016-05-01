@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="409"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Devon" translatesAutoresizingMaskIntoConstraints="NO" id="FnP-LZ-ZNg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Devon" translatesAutoresizingMaskIntoConstraints="NO" id="FnP-LZ-ZNg" customClass="PFImageView">
                                             <rect key="frame" x="200" y="28" width="200" height="200"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="C6K-7b-nKw"/>
@@ -42,7 +42,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tUs-Vw-nBU">
-                                            <rect key="frame" x="8" y="312" width="584" height="76"/>
+                                            <rect key="frame" x="8" y="312" width="584" height="73"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="76" id="1rK-AA-eWe"/>
@@ -51,9 +51,15 @@
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="1rK-AA-eWe"/>
+                                                </mask>
+                                            </variation>
                                         </textView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tUs-Vw-nBU" secondAttribute="bottom" constant="16" id="3eJ-mR-fcU"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="FnP-LZ-ZNg" secondAttribute="trailing" id="I0c-z0-oLc"/>
                                         <constraint firstItem="tUs-Vw-nBU" firstAttribute="top" secondItem="J70-pK-gAp" secondAttribute="bottom" constant="17" id="Jzk-OJ-vkI"/>
                                         <constraint firstItem="FnP-LZ-ZNg" firstAttribute="top" secondItem="wzM-NB-VyJ" secondAttribute="topMargin" constant="20" id="KTe-Av-aln"/>

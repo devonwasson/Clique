@@ -6,12 +6,12 @@
 //  Copyright © 2016 BuckMe. All rights reserved.
 //
 
-
+import ParseUI
 class DashboardTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: PFImageView!
     @IBOutlet weak var totalTimeLabel: UILabel!
     
     @IBOutlet weak var placeLabel: UILabel!
@@ -21,6 +21,12 @@ class DashboardTableViewCell: UITableViewCell {
         self.nameLabel.text = connection.getRealUserName()
         self.totalTimeLabel.text = connection.getTotalTimeString()
         self.placeLabel.text = "Recently seen at " + connection.getLastPlaceSeenString()
+        if profileImage != nil{
+            self.profileImage.file = connection.profilePicture
+            self.profileImage.loadInBackground()
+            
+        }
+        
         
         
     }

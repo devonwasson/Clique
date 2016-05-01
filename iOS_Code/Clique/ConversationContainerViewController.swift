@@ -10,6 +10,17 @@ import UIKit
 
 class ConversationContainerViewController: UIViewController {
 
+    @IBOutlet weak var container: UIView!
+    
+    @IBOutlet weak var bottomView: UIView!
+    
+    
+    var connection : Connection!
+    var messageManager = MessageManager()
+
+    @IBOutlet weak var inputTextfield: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationContainerViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
@@ -18,8 +29,21 @@ class ConversationContainerViewController: UIViewController {
         
         let dismissTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: .dismissKeyboard)
         view.addGestureRecognizer(dismissTap)
+        
+        
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        let alert = Alert.presentRequestAlert(self)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func updateView(){
+        self.navigationItem.title = connection.getRealUserName()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +59,8 @@ class ConversationContainerViewController: UIViewController {
             self.view.frame.origin.y -= totalSize
         }
         
+        //(self.container as! ConversationTableViewController).tableViewScrollToBottom(true)
+        
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -44,15 +70,23 @@ class ConversationContainerViewController: UIViewController {
         }
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        
+        if segue.identifier == "conversationEmbedSegue"{
+            var myTableViewController = segue.destinationViewController as! ConversationTableViewController
+            myTableViewController.messageManager = self.messageManager
+            myTableViewController.connection = self.connection
+        }
     }
-    */
+ 
 
     /* This should dismiss the keyboard
      - Inspired by: http://stackoverflow.com//users//2589276//esq
@@ -61,6 +95,11 @@ class ConversationContainerViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func sendButtonPressed(sender: AnyObject) {
+        self.messageManager.sendMessage(self.inputTextfield.text!)
+        self.inputTextfield.text = ""
+        dismissKeyboard()
+    }
 
 }
 

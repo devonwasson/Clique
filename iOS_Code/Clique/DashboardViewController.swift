@@ -9,66 +9,48 @@
 import UIKit
 import Parse
 
-class DashboardViewController: UITableViewController, MessageDelegate {
-    @IBOutlet weak var segmentedFilter: UISegmentedControl!
+class DashboardViewController: UITableViewController {
     
+    
+    @IBOutlet weak var segmentedFilter: UISegmentedControl!
     var connections = [Connection]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: .eventListUpdate, name: EventListUpdateNotification, object: nil)
+    
+    @IBAction func filterChanged(sender: AnyObject) {
         
-        //self.connections = [Connection(), Connection()]
-        //Test Parse
-        ParseFetcher.getOverlappingUsersWithInformation("vJWd1CVvex", completion:
-        {
-            (connections: [Connection]) in
-//            self.connections = connections
-//            print(connections)
-            
-            self.connections = connections
-            print(connections)
-            NSNotificationCenter.defaultCenter().postNotificationName("EventListUpdateNotification", object: nil)
-        })
-        
-        ParseFetcher.getUserByID("vJWd1CVvex") {
-            (qUser: User?) in
-            if qUser != nil {
-                var user: User = qUser!
-                
-            } else {
-                print("user is nil")
-            }
+        if segmentedFilter.selectedSegmentIndex == 0{
+            self.connections = Connection.sortByLastSeen(connections)
+        }
+        else{
+            self.connections = Connection.sortByMostOften(connections)
         }
         
-        //parseCom.addNewTimePair("vJWd1CVvex", placeID: "ltmIiKOf2K", startTime: "1461301851337", endTime: "1461301861337")
-        
-        ParseFetcher.getAndSaveAllGeoFences() {
-            (places: [Place]) in
-            for place in places {
-                print(place.longitude)
-            }
-        }
-        
-        ParseFetcher.getOverlappingPlaces("vJWd1CVvex") {
-            (placeConnections: [PlaceConnection]) in
-            print(placeConnections)
-        }
-        
-        var manager = MessageManager()
-        manager.setDelegate(self)
-        
-        
-        
-        //set event listener for SegmentedControl
-//        segmentedFilter.addTarget(self, action: #selector(DashboardViewController.segmentedFilterValueChanged(_:)), forControlEvents: .TouchUpInside)
-//        segmentedFilter.addTarget(self, action: #selector(DashboardViewController.segmentedFilterValueChanged(_:)), forControlEvents: .AllEvents)
+        self.tableView.reloadData()
         
     }
     
-    func receivedNewMessages(messages: [Message]) {
-        print("Received messages")
-        print(messages)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.segmentedFilter.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(self.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.reloadData()
+
+    }
+    
+    
+    /**
+     Called to refresh the tableview's data
+     */
+    func refresh(sender:AnyObject){
+        
+        self.reloadData()
+        refreshControl?.endRefreshing()
+        
     }
     
     func segmentedFilterValueChanged(segment: UISegmentedControl) {
@@ -109,6 +91,13 @@ class DashboardViewController: UITableViewController, MessageDelegate {
      */
     func reloadData(){
         // Call Parse Fetcher Function to get array of Connections
+        
+        ParseFetcher.getOverlappingUsersWithInformation("vJWd1CVvex", completion:
+            {
+                (connections: [Connection]) in
+                self.connections = connections
+                self.filterChanged(self.segmentedFilter)
+        })
     }
     
     /**
@@ -143,6 +132,36 @@ class DashboardViewController: UITableViewController, MessageDelegate {
             nextScene.connection = cell.connection
         }
     }
+    
+    /*
+     Sets the automatic height of the cells
+     */
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
+    /*
+     Sets the estimated automatic height of the cells
+     */
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+//    /*
+//     Sets the automatic height of the cells
+//     */
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
+//    
+//    
+//    /*
+//     Sets the estimated automatic height of the cells
+//     */
+//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
 }
 
 
@@ -157,8 +176,4 @@ private extension Selector{
         #selector(DashboardViewController.eventListUpdate(_:))
 }
 
-
-// MARK: - Notifications
-
-public let EventListUpdateNotification = "EventListUpdateNotification"
 

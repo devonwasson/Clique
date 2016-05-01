@@ -21,6 +21,7 @@ class Connection {
     var profilePicture: PFFile?
     var placesTimePairs: [PlaceTime]
     
+    var lastSeenTime: Double
     var lastPlaceSeenId: String
     var lastPlaceSeen: String
     
@@ -36,6 +37,7 @@ class Connection {
         lastPlaceSeenId = ""
         lastPlaceSeen = ""
         profilePicture = nil
+        lastSeenTime = 0
     }
     
     func getUserName() -> String {
@@ -73,10 +75,9 @@ class Connection {
     }
     
     func computeLastPlaceSeen() {
-        var lastSeenTime: Double = 0
         for placeTime in placesTimePairs {
-            if placeTime.lastSeenTime > lastSeenTime {
-                lastSeenTime = placeTime.lastSeenTime
+            if placeTime.lastSeenTime > self.lastSeenTime {
+                self.lastSeenTime = placeTime.lastSeenTime
                 lastPlaceSeenId = placeTime.placeId
                 lastPlaceSeen = placeTime.placeName
             }
@@ -136,4 +137,14 @@ class Connection {
     }
     
     
+    class func sortByLastSeen(connections: [Connection]) -> [Connection] {
+        return connections.sort({$0.lastSeenTime > $1.lastSeenTime})
+        
+    }
+    
+    class func sortByMostOften(connections: [Connection]) -> [Connection]{
+        return connections.sort({$0.totalTimeInSec > $1.totalTimeInSec})
+    }
 }
+    
+    

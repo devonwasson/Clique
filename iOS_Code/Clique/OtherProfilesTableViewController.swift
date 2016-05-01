@@ -70,7 +70,7 @@ class OtherProfilesTableViewController: UITableViewController {
 
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    /*override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0{
             return 410.0
         }
@@ -80,7 +80,7 @@ class OtherProfilesTableViewController: UITableViewController {
         else {
             return 50.0
         }
-    }
+    }*/
     
     
 //    @IBOutlet weak var bottomView: UITableViewCell!
@@ -123,14 +123,32 @@ class OtherProfilesTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let nextScene = segue.destinationViewController as! ConversationContainerViewController
+        nextScene.connection = self.connection
+
     }
-    */
+    
+    /*
+     Sets the automatic height of the cells
+     */
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
+    /*
+     Sets the estimated automatic height of the cells
+     */
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 
 }

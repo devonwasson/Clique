@@ -92,19 +92,19 @@
         <scene sceneID="yCc-XC-zhe">
             <objects>
                 <tableViewController id="S5f-h6-TDi" customClass="MyProfileTableViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CRl-e4-EsV">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="462" sectionHeaderHeight="28" sectionFooterHeight="28" id="CRl-e4-EsV">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="myProfileTopCell" rowHeight="410" id="Yc8-BZ-iPF" userLabel="Header Cell" customClass="MyProfileTopCell" customModule="Clique" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="410"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="myProfileTopCell" rowHeight="462" id="Yc8-BZ-iPF" userLabel="Header Cell" customClass="MyProfileTopCell" customModule="Clique" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="462"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yc8-BZ-iPF" id="dem-TH-UAB">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="409"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="462"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Devon" translatesAutoresizingMaskIntoConstraints="NO" id="RCH-jH-4To">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Even Peck" translatesAutoresizingMaskIntoConstraints="NO" id="RCH-jH-4To">
                                             <rect key="frame" x="200" y="28" width="200" height="200"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="RCH-jH-4To" secondAttribute="height" multiplier="1:1" id="ECA-AQ-fsq"/>
@@ -116,26 +116,27 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-5Z-qgn">
-                                            <rect key="frame" x="8" y="312" width="584" height="76"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mike HammerHead Shark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OXC-Ac-z2l">
+                                            <rect key="frame" x="175" y="268" width="251" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-5Z-qgn">
+                                            <rect key="frame" x="8" y="312" width="584" height="141"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="76" id="Om4-OJ-40K"/>
+                                                <constraint firstAttribute="height" constant="141" id="Om4-OJ-40K"/>
                                                 <constraint firstAttribute="width" constant="584" id="wQx-Z5-C0c"/>
                                             </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike HammerHead Shark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OXC-Ac-z2l">
-                                            <rect key="frame" x="175" y="268" width="251" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="OXC-Ac-z2l" firstAttribute="centerX" secondItem="dem-TH-UAB" secondAttribute="centerX" id="0BE-97-2Pu"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WBU-5Z-qgn" secondAttribute="bottom" id="B2l-Fv-voy"/>
                                         <constraint firstItem="OXC-Ac-z2l" firstAttribute="top" secondItem="RCH-jH-4To" secondAttribute="bottom" constant="40" id="Een-By-dVi"/>
                                         <constraint firstItem="RCH-jH-4To" firstAttribute="centerX" secondItem="dem-TH-UAB" secondAttribute="centerX" id="Fhp-HH-fmJ"/>
                                         <constraint firstItem="RCH-jH-4To" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dem-TH-UAB" secondAttribute="leadingMargin" id="JDc-FG-ReT"/>
@@ -155,6 +156,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bioTextView" destination="WBU-5Z-qgn" id="vVp-NX-rc5"/>
                                     <outlet property="nameLabel" destination="OXC-Ac-z2l" id="24g-FF-Det"/>
                                     <outlet property="profilePic" destination="RCH-jH-4To" id="8oc-LJ-sHc"/>
                                 </connections>
@@ -166,7 +168,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Profile" id="lAY-gE-con"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TV8-4N-BI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +197,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Devon" width="458" height="456"/>
+        <image name="Even Peck" width="262" height="262"/>
         <image name="Gender Neutral User Filled-50" width="25" height="25"/>
         <image name="Gender Neutral User-50" width="25" height="25"/>
         <image name="Settings-50" width="25" height="25"/>

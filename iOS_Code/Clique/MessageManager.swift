@@ -13,13 +13,12 @@ protocol MessageDelegate: class {
 
 class MessageManager{
     var delegate: MessageDelegate?
-    
     let appDelegate = UIApplication.sharedApplication().delegate as! PubNubMessageDelegate
     
     
     init() {
         self.delegate = nil
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(actOnSpecialNotification), name: mySpecialNotificationKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .actOnSpecialNotification, name: mySpecialNotificationKey, object: nil)
     }
     
     func setDelegate(delegate: MessageDelegate) {
@@ -27,7 +26,7 @@ class MessageManager{
     }
     
     
-    @objc func actOnSpecialNotification() {
+    @objc func actOnSpecialNotification(notification:NSNotification) {
         if (delegate != nil) {
             let messages = Message.getAllMessagesFromCoreData()
             delegate!.receivedNewMessages(messages)
@@ -40,4 +39,16 @@ class MessageManager{
     
     
     
+}
+
+// MARK: - Selector
+
+/*
+ Inspired by: https://medium.com/swift-programming/swift-selector-syntax-sugar-81c8a8b10df3#.4wgcad6ur
+ */
+private extension Selector{
+    
+    static let actOnSpecialNotification =
+        #selector(MessageManager.actOnSpecialNotification(_:))
+
 }

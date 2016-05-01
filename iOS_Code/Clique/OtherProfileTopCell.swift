@@ -10,7 +10,7 @@ import ParseUI
 class OtherProfileTopCell: UITableViewCell {
 
 
-    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var profilePic: PFImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -28,5 +28,11 @@ class OtherProfileTopCell: UITableViewCell {
     func updateCell(){
         self.nameLabel.text = connection.getRealUserName()
         self.bioTextView.text = connection.bio
+        
+        if profilePic != nil{
+            self.profilePic.file = connection.profilePicture
+            self.profilePic.loadInBackground()
+            
+        }
     }
 }

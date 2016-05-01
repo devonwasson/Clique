@@ -6,14 +6,16 @@
 //  Copyright © 2016 BuckMe. All rights reserved.
 //
 
+import ParseUI
 
 class MyProfileTopCell: UITableViewCell {
 
-    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var profilePic: PFImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    var connection = Connection()
+    @IBOutlet weak var bioTextView: UITextView!
+    
     
     override func awakeFromNib() {
         
@@ -24,6 +26,13 @@ class MyProfileTopCell: UITableViewCell {
     }
     
     func updateCell(){
-        self.nameLabel.text = connection.getRealUserName()
+        self.nameLabel.text = currentUserRealName
+        self.bioTextView.text = currentUserbio
+        
+//        if profilePic != nil{
+//            self.profilePic.file = connection.profilePicture
+//            self.profilePic.loadInBackground()
+//            
+//        }
     }
 }
