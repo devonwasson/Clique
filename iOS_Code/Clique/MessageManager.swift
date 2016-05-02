@@ -16,7 +16,9 @@ class MessageManager{
     let appDelegate = UIApplication.sharedApplication().delegate as! PubNubMessageDelegate
     
     
+    var connection : Connection?
     init() {
+        self.connection = nil
         self.delegate = nil
         NSNotificationCenter.defaultCenter().addObserver(self, selector: .actOnSpecialNotification, name: mySpecialNotificationKey, object: nil)
     }
@@ -28,13 +30,18 @@ class MessageManager{
     
     @objc func actOnSpecialNotification(notification:NSNotification) {
         if (delegate != nil) {
-            let messages = Message.getAllMessagesFromCoreData()
+            let messages = Message.getAllMessagesFromCoreData(self.connection!)
             delegate!.receivedNewMessages(messages)
         }
     }
     
     func sendMessage(message: String) {
         appDelegate.sendMessage(message)
+    }
+    
+    func sendMessage(message: String, connection: Connection) {
+        //appDelegate.sendMessage(message)
+        appDelegate.sendMessageWithConnection(message, connection: connection)
     }
     
     
@@ -52,3 +59,4 @@ private extension Selector{
         #selector(MessageManager.actOnSpecialNotification(_:))
 
 }
+

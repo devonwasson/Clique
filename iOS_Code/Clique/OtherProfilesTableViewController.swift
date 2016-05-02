@@ -55,14 +55,14 @@ class OtherProfilesTableViewController: UITableViewController {
         }
 
         else if indexPath.row < tableView.numberOfRowsInSection(0) - 1{
-            var locCell = tableView.dequeueReusableCellWithIdentifier("otherProfileLocationCell", forIndexPath: indexPath) as!
+            let locCell = tableView.dequeueReusableCellWithIdentifier("otherProfileLocationCell", forIndexPath: indexPath) as!
                 OtherProfileLocationCell
             locCell.location = self.connection.placesTimePairs[indexPath.row - 1]
             locCell.updateCell()
             return locCell
         }
         else{
-            var cell = tableView.dequeueReusableCellWithIdentifier("otherProfileBottomCell", forIndexPath: indexPath) as! OtherProfileBottomCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("otherProfileBottomCell", forIndexPath: indexPath) as! OtherProfileBottomCell
             cell.connection = self.connection
             cell.updateCell()
             return cell
@@ -131,8 +131,16 @@ class OtherProfilesTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
+        if segue.identifier == "toConversation"{
+            
+            let nextScene = segue.destinationViewController as! ConversationContainerViewController
+            nextScene.connection = self.connection
+            nextScene
+        }
+        
         let nextScene = segue.destinationViewController as! ConversationContainerViewController
         nextScene.connection = self.connection
+        
 
     }
     

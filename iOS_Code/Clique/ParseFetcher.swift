@@ -188,10 +188,10 @@ class ParseFetcher {
                     let placesTimePairs = results as! NSArray
                     
                     for unwrappedPlaceTimePairs in placesTimePairs {
-                        var placeConnection = PlaceConnection()
+                        let placeConnection = PlaceConnection()
                         placeConnections += [placeConnection]
                         
-                        var placeTimePairs = unwrappedPlaceTimePairs as! NSDictionary
+                        let placeTimePairs = unwrappedPlaceTimePairs as! NSDictionary
                         placeConnection.placeId =  placeTimePairs["placeId"] as! String
                         placeConnection.placeName = placeTimePairs["placeName"] as! String
                         

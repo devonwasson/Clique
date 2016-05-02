@@ -18,8 +18,8 @@ class MessageRightTableViewCell: UITableViewCell {
         self.messageText.layer.cornerRadius = 10
         self.messageText.layer.masksToBounds = true
         self.messageText.scrollEnabled = false
-        messageText.sizeToFit()
-        messageText.layoutIfNeeded()
+        //messageText.sizeToFit()
+        //messageText.layoutIfNeeded()
         let height = messageText.sizeThatFits(CGSizeMake(messageText.frame.size.width, CGFloat.max)).height
         messageText.contentSize.height = height
     }

@@ -21,6 +21,10 @@ class MessageTableViewCell: UITableViewCell {
     
     func updateCell(){
         //self.nameLabel.text = connection.getRealUserName()
+        self.nameLabel.text = connection.realUserName
+        self.profileImage.image = UIImage(named: self.connection.messageFile)
+        self.messageLabel.text = connection.lastMessage
+        self.timeStampLabel.text = connection.lastTimeMessaged
         
     }
     

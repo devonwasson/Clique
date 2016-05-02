@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var locationManager = CLLocationManager()
     var client: PubNub?
-    var channels = ["channel1","channel2"]
+    var channels = ["channel1","Evan Peck_Bill Gates", "HAL_Evan Peck", "Lacey Gavala_Evan Peck", "Yugioh_Evan Peck"]
 
     
     // For demo purposes the initialization is done in the init function so that
@@ -34,19 +34,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func client(client: PubNub, didReceiveMessage message: PNMessageResult) {
         if message.data.actualChannel == nil {
-            if (message.data.subscribedChannel! == "channel1") {
+            //if (message.data.subscribedChannel! == "channel1") {
                 let messageObject = Message()
                 messageObject.time = message.data.timetoken
                 let dict = message.data.message as! NSDictionary
+                print(dict)
                 messageObject.senderId = dict.objectForKey("senderId") as! String
                 messageObject.senderUserName = dict.objectForKey("senderUserName") as! String
                 messageObject.senderRealName = dict.objectForKey("senderRealName") as! String
                 messageObject.text = dict.objectForKey("text") as! String
+                messageObject.channel = message.data.subscribedChannel!
                 messageObject.saveToCoreData()
-                notify()	
-            } else {
-                print("message has been received on channel group")
-            }
+                notify()
+                print("message has been received on channel: " + message.data.subscribedChannel!)
+          //  } else {
+                //print("message has been received on channel group")
+            //}
             // save to coredata
             
         } else {
@@ -58,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
     }
     
+    
     func sendMessage(message: String) {
         var messageToSent = Dictionary<String, String>()
         messageToSent["senderId"] = currentUserId
@@ -67,6 +71,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.client?.publish(messageToSent, toChannel: "channel1", compressed: false, withCompletion: {
             (status) -> Void in
             print("Message sent: " + message)
+        })
+    }
+    
+    func sendMessageWithConnection(message: String, connection: Connection) {
+        var channel = "channel1"
+        if connection.realUserName > currentUserRealName{
+            channel = connection.realUserName + "_" + currentUserRealName
+        }
+        else{
+            channel = currentUserRealName + "_" + connection.realUserName
+        }
+        
+        var messageToSent = Dictionary<String, String>()
+        messageToSent["senderId"] = currentUserId
+        messageToSent["senderUserName"] = currentUserName
+        messageToSent["senderRealName"] = currentUserRealName
+        messageToSent["text"] = message
+        self.client?.publish(messageToSent, toChannel: channel, compressed: false, withCompletion: {
+            (status) -> Void in
+            print("Message sent: " + message + ", on channel: " + channel)
         })
     }
     
@@ -301,4 +325,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
 
 }
-

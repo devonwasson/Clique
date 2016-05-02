@@ -17,18 +17,23 @@ class ConversationContainerViewController: UIViewController {
     
     var connection : Connection!
     var messageManager = MessageManager()
+    var flag = false
+    var index = 0
 
     @IBOutlet weak var inputTextfield: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageManager.connection = self.connection
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationContainerViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationContainerViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
         
         let dismissTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: .dismissKeyboard)
         view.addGestureRecognizer(dismissTap)
+        
+        self.navigationItem.title = self.connection.realUserName
         
         
         
@@ -38,14 +43,13 @@ class ConversationContainerViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        let alert = Alert.presentRequestAlert(self)
-        self.presentViewController(alert, animated: true, completion: nil)
+        if connection.isAccepted == false{
+            let alert = Alert.presentRequestAlert(self)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
     }
     
-    func updateView(){
-        self.navigationItem.title = connection.getRealUserName()
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,10 +85,17 @@ class ConversationContainerViewController: UIViewController {
         
         
         if segue.identifier == "conversationEmbedSegue"{
-            var myTableViewController = segue.destinationViewController as! ConversationTableViewController
+            let myTableViewController = segue.destinationViewController as! ConversationTableViewController
             myTableViewController.messageManager = self.messageManager
             myTableViewController.connection = self.connection
         }
+        
+        else if segue.identifier == "toProfileView"{
+            let controller = segue.destinationViewController as! OtherProfilesTableViewController
+            controller.connection = self.connection
+            
+        }
+            
     }
  
 
@@ -96,7 +107,7 @@ class ConversationContainerViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(sender: AnyObject) {
-        self.messageManager.sendMessage(self.inputTextfield.text!)
+        self.messageManager.sendMessage(self.inputTextfield.text!, connection : self.connection)
         self.inputTextfield.text = ""
         dismissKeyboard()
     }

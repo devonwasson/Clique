@@ -29,10 +29,13 @@ class OtherProfileTopCell: UITableViewCell {
         self.nameLabel.text = connection.getRealUserName()
         self.bioTextView.text = connection.bio
         
-        if profilePic != nil{
+        if self.connection.messageFile == "NONE"{
             self.profilePic.file = connection.profilePicture
             self.profilePic.loadInBackground()
             
+        }
+        else{
+            self.profilePic.image = UIImage(named: self.connection.messageFile)
         }
     }
 }

@@ -11,15 +11,40 @@ import UIKit
 class MessagesTableViewController: UITableViewController {
     
     
+    @IBOutlet weak var filter: UISegmentedControl!
+    
+    var flag = false
+
+    
+    
+    @IBAction func filterChanged(sender: AnyObject) {
+        
+        self.tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if messageRequests.count > 0{
+            self.filter.selectedSegmentIndex = 1
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if messageRequests.count == 0{
+            self.filter.selectedSegmentIndex = 0
+        }
+        else if messageConnections.count == 0{
+            self.filter.selectedSegmentIndex = 1
+        }
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,21 +56,34 @@ class MessagesTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
+
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        if self.filter.selectedSegmentIndex == 0{
+            return messageConnections.count
+        }
+        else{
+            return messageRequests.count
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath) as! MessageTableViewCell
-
+        
         // Configure the cell...
         
-        
+        if self.filter.selectedSegmentIndex == 0{
+            cell.connection = messageConnections[indexPath.row]
+        }
+        else{
+            cell.connection = messageRequests[indexPath.row]
+        }
+        cell.updateCell()
 
         return cell
     }
@@ -97,6 +135,8 @@ class MessagesTableViewController: UITableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow {
             let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! MessageTableViewCell
             nextScene.connection = cell.connection
+            nextScene.index = indexPath.row
+            
         }
     }
 

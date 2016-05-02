@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="409"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Devon" translatesAutoresizingMaskIntoConstraints="NO" id="FnP-LZ-ZNg" customClass="PFImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lacey" translatesAutoresizingMaskIntoConstraints="NO" id="FnP-LZ-ZNg" customClass="PFImageView">
                                             <rect key="frame" x="200" y="28" width="200" height="200"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="C6K-7b-nKw"/>
@@ -35,8 +35,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike HammerHead Shark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="J70-pK-gAp">
-                                            <rect key="frame" x="175" y="268" width="251" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lacey Gavala" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="J70-pK-gAp">
+                                            <rect key="frame" x="234" y="268" width="132" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -134,7 +134,7 @@
                     <navigationItem key="navigationItem" id="hqw-7o-GwO">
                         <barButtonItem key="rightBarButtonItem" image="Message-50" id="ib3-w3-rt0">
                             <connections>
-                                <segue destination="ybf-WL-Usa" kind="show" id="mLt-vi-GYR"/>
+                                <segue destination="ybf-WL-Usa" kind="show" identifier="toConversation" id="mLt-vi-GYR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -156,7 +156,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Devon" width="458" height="456"/>
+        <image name="Lacey" width="163" height="163"/>
         <image name="Message-50" width="25" height="25"/>
     </resources>
 </document>

@@ -18,7 +18,7 @@ class ConversationTableViewController: UITableViewController, MessageDelegate {
         self.tableViewScrollToBottom(false)
         
         messageManager.setDelegate(self)
-        self.messages = Message.getAllMessagesFromCoreData()
+        self.messages = Message.getAllMessagesFromCoreData(self.connection)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

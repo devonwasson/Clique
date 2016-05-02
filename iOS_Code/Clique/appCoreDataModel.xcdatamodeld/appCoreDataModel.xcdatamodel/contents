@@ -4,6 +4,7 @@
         <attribute name="enterTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Message" syncable="YES">
+        <attribute name="channel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senderId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senderRealName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senderUserName" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,8 +28,8 @@
     </entity>
     <elements>
         <element name="GeofenceEnterTime" positionX="-54" positionY="36" width="128" height="60"/>
+        <element name="Message" positionX="-54" positionY="18" width="128" height="135"/>
         <element name="Place" positionX="-54" positionY="18" width="128" height="30"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="30"/>
-        <element name="Message" positionX="-54" positionY="18" width="128" height="120"/>
     </elements>
 </model>

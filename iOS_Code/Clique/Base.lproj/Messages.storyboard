@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController id="TiX-9v-73W" customClass="MessagesTableViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" id="wQ7-F4-riA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -29,8 +29,8 @@
                                                 <constraint firstAttribute="width" secondItem="QGN-I8-7IW" secondAttribute="height" multiplier="1:1" id="54F-QG-1Su"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lacey Gavala" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xLx-ty-eM6">
-                                            <rect key="frame" x="109" y="8" width="167" height="34"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lacey Gavala" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xLx-ty-eM6">
+                                            <rect key="frame" x="113" y="8" width="167" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -84,19 +84,25 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="9ec-9B-uEg">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="eLg-oj-YNY">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="eLg-oj-YNY">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Messages"/>
                                 <segment title="Requests"/>
                             </segments>
+                            <connections>
+                                <action selector="filterChanged:" destination="TiX-9v-73W" eventType="valueChanged" id="3OG-C2-HRY"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filter" destination="eLg-oj-YNY" id="D1Q-eE-7KR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ey3-oD-t1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2012" y="924.5"/>
+            <point key="canvasLocation" x="1709" y="949"/>
         </scene>
         <!--Messages-->
         <scene sceneID="lh0-fo-Fe3">
@@ -116,56 +122,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="PL7-7w-HhZ" kind="relationship" relationship="rootViewController" id="TwN-PZ-jIK"/>
+                        <segue destination="TiX-9v-73W" kind="relationship" relationship="rootViewController" id="txK-mY-bsh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBj-Ha-hkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="588" y="949"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gin-a2-y9E">
-            <objects>
-                <viewController id="PL7-7w-HhZ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Tq0-Lw-XRF"/>
-                        <viewControllerLayoutGuide type="bottom" id="aaG-uW-pRB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uLL-N8-qMs">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yav-Ke-rcQ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                <connections>
-                                    <segue destination="TiX-9v-73W" kind="embed" id="wLq-zN-yhW"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yav-Ke-rcQ" firstAttribute="leading" secondItem="uLL-N8-qMs" secondAttribute="leading" id="2Q4-dC-AOH"/>
-                            <constraint firstItem="yav-Ke-rcQ" firstAttribute="top" secondItem="Tq0-Lw-XRF" secondAttribute="bottom" id="Q8u-Rq-Spr"/>
-                            <constraint firstAttribute="trailing" secondItem="yav-Ke-rcQ" secondAttribute="trailing" id="XaK-BE-T33"/>
-                            <constraint firstItem="yav-Ke-rcQ" firstAttribute="bottom" secondItem="aaG-uW-pRB" secondAttribute="top" constant="64" id="ePX-Dt-pXn"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="fyS-Ek-Fxc">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="kmA-Lq-ZWi">
-                            <rect key="frame" x="180" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Messages"/>
-                                <segment title="Requests"/>
-                            </segments>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </segmentedControl>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zqk-9u-5lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1280" y="949"/>
         </scene>
         <!--Conversation-->
         <scene sceneID="YrF-ly-48A">

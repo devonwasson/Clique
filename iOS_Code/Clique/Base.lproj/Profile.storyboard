@@ -5,89 +5,8 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--My Profile-->
-        <scene sceneID="W1D-XU-qyQ">
-            <objects>
-                <viewController title="My Profile" id="IEq-uc-jpI" customClass="MyProfileViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bzt-zu-PyO"/>
-                        <viewControllerLayoutGuide type="bottom" id="plh-mi-nLj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q6g-Bc-mVn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gender Neutral User Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="PAA-r9-DTx">
-                                <rect key="frame" x="210" y="28" width="180" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PAA-r9-DTx" secondAttribute="height" multiplier="1:1" id="yZ8-DL-aWQ"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb8-ta-OLX">
-                                <rect key="frame" x="236" y="216" width="129" height="30"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlU-or-ucj">
-                                <rect key="frame" x="275" y="254" width="51" height="15"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="My Bio" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-3R-AKj" userLabel="Bio Text">
-                                <rect key="frame" x="90" y="318" width="420" height="225"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvs-Lc-z3d">
-                                <rect key="frame" x="259" y="290" width="83" height="20"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tb8-ta-OLX" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="1ef-U0-Bxy"/>
-                            <constraint firstItem="plh-mi-nLj" firstAttribute="top" secondItem="rNT-3R-AKj" secondAttribute="bottom" constant="8" symbolic="YES" id="A1h-8H-Zg1"/>
-                            <constraint firstItem="tb8-ta-OLX" firstAttribute="top" secondItem="PAA-r9-DTx" secondAttribute="bottom" constant="8" symbolic="YES" id="AEF-DU-VRg"/>
-                            <constraint firstItem="rNT-3R-AKj" firstAttribute="width" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.7" id="Csa-Mt-PoU"/>
-                            <constraint firstItem="tb8-ta-OLX" firstAttribute="width" relation="lessThanOrEqual" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.8" id="DAw-P5-7rm"/>
-                            <constraint firstItem="PAA-r9-DTx" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="Dm5-EP-RLy"/>
-                            <constraint firstItem="Lvs-Lc-z3d" firstAttribute="width" relation="lessThanOrEqual" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.8" id="FmB-JH-jbG"/>
-                            <constraint firstItem="rNT-3R-AKj" firstAttribute="top" secondItem="Lvs-Lc-z3d" secondAttribute="bottom" constant="8" symbolic="YES" id="ObZ-QR-Wbm"/>
-                            <constraint firstItem="Lvs-Lc-z3d" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="eDi-yQ-8LY"/>
-                            <constraint firstItem="PAA-r9-DTx" firstAttribute="width" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.3" id="nED-rc-fkT"/>
-                            <constraint firstItem="RlU-or-ucj" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="nms-pD-Mbw"/>
-                            <constraint firstItem="RlU-or-ucj" firstAttribute="width" relation="lessThanOrEqual" secondItem="Q6g-Bc-mVn" secondAttribute="width" multiplier="0.8" id="qZV-eF-g5x"/>
-                            <constraint firstItem="RlU-or-ucj" firstAttribute="top" secondItem="tb8-ta-OLX" secondAttribute="bottom" constant="8" symbolic="YES" id="rGc-E8-XKY"/>
-                            <constraint firstItem="PAA-r9-DTx" firstAttribute="top" secondItem="bzt-zu-PyO" secondAttribute="bottom" constant="8" symbolic="YES" id="sAl-kF-P8F"/>
-                            <constraint firstItem="rNT-3R-AKj" firstAttribute="centerX" secondItem="Q6g-Bc-mVn" secondAttribute="centerX" id="v7z-kn-AAk"/>
-                            <constraint firstItem="Lvs-Lc-z3d" firstAttribute="centerY" secondItem="Q6g-Bc-mVn" secondAttribute="centerY" id="y5Y-ly-eFW"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="Gender Neutral User-50" selectedImage="Gender Neutral User Filled-50" id="AHm-U7-aHE"/>
-                    <navigationItem key="navigationItem" title="My Profile" id="3dn-cs-Oer">
-                        <barButtonItem key="rightBarButtonItem" image="Settings-50" id="z0Q-jl-T3w"/>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="profileBio" destination="rNT-3R-AKj" id="ib5-5a-6GA"/>
-                        <outlet property="profileEmail" destination="Lvs-Lc-z3d" id="vqM-x2-iXo"/>
-                        <outlet property="profileGender" destination="RlU-or-ucj" id="Bj4-5o-ugO"/>
-                        <outlet property="profileImageView" destination="PAA-r9-DTx" id="mai-8V-mQ8"/>
-                        <outlet property="profileName" destination="tb8-ta-OLX" id="xpw-zp-ZOu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="feF-QT-MCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1540" y="1055"/>
-        </scene>
         <!--My Profile-->
         <scene sceneID="yCc-XC-zhe">
             <objects>
@@ -116,14 +35,14 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mike HammerHead Shark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OXC-Ac-z2l">
-                                            <rect key="frame" x="175" y="268" width="251" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike HammerHead Shark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OXC-Ac-z2l">
+                                            <rect key="frame" x="175" y="268" width="251" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-5Z-qgn">
-                                            <rect key="frame" x="8" y="312" width="584" height="141"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-5Z-qgn">
+                                            <rect key="frame" x="8" y="313" width="584" height="141"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="141" id="Om4-OJ-40K"/>
@@ -200,6 +119,5 @@
         <image name="Even Peck" width="262" height="262"/>
         <image name="Gender Neutral User Filled-50" width="25" height="25"/>
         <image name="Gender Neutral User-50" width="25" height="25"/>
-        <image name="Settings-50" width="25" height="25"/>
     </resources>
 </document>
