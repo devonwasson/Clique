@@ -7,8 +7,6 @@ Link to Medium Post: <a href="https://medium.com/@dtw006/clique-make-connections
 <br>Link to slides for Final Presentation: <a href="https://docs.google.com/presentation/d/1vadlAf-pMxyqnf3fCWP7PLr1stUr327B6_DgIglp1Ic/edit?usp=sharing">Video</a>
 <br>Link to final video: <a href="https://drive.google.com/file/d/0B-_3MBQmWXgpcFBTNTcwTXg3akE/view?usp=sharing">video</a>
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![mainpages](https://raw.githubusercontent.com/devonwasson/Clique/master/FinalReport/gifsAndScreenShots/gifs/mainPages.gif)
+![messageRequest](https://raw.githubusercontent.com/devonwasson/Clique/master/FinalReport/gifsAndScreenShots/gifs/messageRequest.gif)
+![profileView](https://raw.githubusercontent.com/devonwasson/Clique/master/FinalReport/gifsAndScreenShots/gifs/profileViews.gif)
