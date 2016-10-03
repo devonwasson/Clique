@@ -1,0 +1,30 @@
+Worst: 
+- Message/requests doesn't make sense
+  - merge them into one
+  - have a filter on top for swapping between two
+
+Moderate:
+- All/suggest/connected
+  - change to filter on location/time/recent
+- What if your top suggested is someone you already know
+  - Add an "I already know this person" button
+  - This dismisses them from your feed.
+- What if I don't want to talk to this person
+  - Add an accept and dismiss button
+  - Add a dialog box to accept or decline a new message.
+  - Let user see message, instead of chat box, have accept or decline buttons
+    - If accept, chat box comes back
+    - If decline, their message request goes away.
+
+Mild:
+- on messages, how to get to profile
+  - current: click on name
+  - future: add a small profile button
+- Put a list of profiles in side bar
+  - if we want to, easy way for people to see their contacts
+- Still hard to send out a first message
+  - Add an option to send out a prompt instead of a message
+- Didn't think to open profile to see where user saw that person
+  - Add it to the snippit on the main screen
+- App looks a lot like things that already exist
+  - ???

@@ -6,3 +6,9 @@ To install: make sure ruby is installed, then 'gem install pods'.<br>
 Link to Medium Post: <a href="https://medium.com/@dtw006/clique-make-connections-8160016bfc2f#.bk1m0nsqi">Post</a>
 <br>Link to slides for Final Presentation: <a href="https://docs.google.com/presentation/d/1vadlAf-pMxyqnf3fCWP7PLr1stUr327B6_DgIglp1Ic/edit?usp=sharing">Video</a>
 <br>Link to final video: <a href="https://drive.google.com/file/d/0B-_3MBQmWXgpcFBTNTcwTXg3akE/view?usp=sharing">video</a>
+
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
