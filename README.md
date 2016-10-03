@@ -8,10 +8,12 @@ Link to Medium Post: <a href="https://medium.com/@dtw006/clique-make-connections
 <br>Link to final video: <a href="https://drive.google.com/file/d/0B-_3MBQmWXgpcFBTNTcwTXg3akE/view?usp=sharing">video</a>
 
 Main Pages
+<br>
 ![mainpages](https://raw.githubusercontent.com/devonwasson/Clique/master/FinalReport/gifsAndScreenShots/gifs/mainPages.gif)
 <br>
 <br>
 Message Request
+<br>
 ![messageRequest](https://raw.githubusercontent.com/devonwasson/Clique/master/FinalReport/gifsAndScreenShots/gifs/messageRequest.gif)
 <br>
 <br>
